@@ -1,0 +1,47 @@
+{
+  "uid" : "8a24145f05def69e",
+  "name" : "testLoginPositive",
+  "title" : "Test login positive",
+  "time" : {
+    "start" : 1475261955938,
+    "stop" : 1475261972303,
+    "duration" : 16365
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "de3955ae3ccb67d2",
+    "name" : "Tester",
+    "title" : "Tester"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "dasha"
+  }, {
+    "name" : "thread",
+    "value" : "7836@dasha.main"
+  }, {
+    "name" : "suite-name",
+    "value" : "Tester"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "framework",
+    "value" : "JUnit"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  } ],
+  "parameters" : [ ]
+}

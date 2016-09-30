@@ -1,0 +1,47 @@
+{
+  "uid" : "f7e42081e94a9c1a",
+  "name" : "testLoginNegative",
+  "title" : "Test login negative",
+  "time" : {
+    "start" : 1475261972443,
+    "stop" : 1475261982664,
+    "duration" : 10221
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "13c0dccd1b60f052",
+    "name" : "Tester",
+    "title" : "Tester"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "dasha"
+  }, {
+    "name" : "thread",
+    "value" : "7836@dasha.main"
+  }, {
+    "name" : "suite-name",
+    "value" : "Tester"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "framework",
+    "value" : "JUnit"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  } ],
+  "parameters" : [ ]
+}

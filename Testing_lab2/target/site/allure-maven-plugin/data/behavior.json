@@ -1,0 +1,48 @@
+{
+  "features" : [ {
+    "title" : "Without feature",
+    "statistic" : {
+      "total" : 2,
+      "passed" : 2,
+      "pending" : 0,
+      "canceled" : 0,
+      "failed" : 0,
+      "broken" : 0
+    },
+    "stories" : [ {
+      "uid" : "3c15f6d53ae9b7c",
+      "title" : "Without story",
+      "statistic" : {
+        "total" : 2,
+        "passed" : 2,
+        "pending" : 0,
+        "canceled" : 0,
+        "failed" : 0,
+        "broken" : 0
+      },
+      "testCases" : [ {
+        "uid" : "916ed55f09335b75",
+        "name" : "testLoginPositive",
+        "title" : "Test login positive",
+        "time" : {
+          "start" : 1475261955938,
+          "stop" : 1475261972303,
+          "duration" : 16365
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "7c6027705a9c8421",
+        "name" : "testLoginNegative",
+        "title" : "Test login negative",
+        "time" : {
+          "start" : 1475261972443,
+          "stop" : 1475261982664,
+          "duration" : 10221
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      } ]
+    } ]
+  } ]
+}
