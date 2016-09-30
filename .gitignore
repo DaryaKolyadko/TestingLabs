@@ -17,6 +17,7 @@
 <<<<<<< HEAD
 **/out/*
 **/target/*
+!**/target/site
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/*
