@@ -9,22 +9,22 @@ import org.openqa.selenium.WebDriver;
  */
 public class MainPage extends Page {
     public static final String URL = "http://www.adukacyja.by";
-    private By myCoursesLocator;
+    private By coursesLocator;
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
-        myCoursesLocator = By.xpath("//*[@id=\"expandable_branch_0_mycourses\"]/a");
+        coursesLocator = By.xpath("//*[@id=\"expandable_branch_0_courses\"]/a");
     }
 
-    public MyCoursesPage goToMyCoursesPage() {
-        driver.findElement(myCoursesLocator).click();
+    public CoursesPage goToCoursesPage() {
+        driver.findElement(coursesLocator).click();
         waitFor(2);
-        return new MyCoursesPage(driver);
+        return new CoursesPage(driver);
     }
 
     public boolean tryInit() {
         try {
-            driver.findElement(myCoursesLocator);
+            driver.findElement(coursesLocator);
             return true;
         } catch (NoSuchElementException e) {
             return false;

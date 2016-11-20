@@ -32,7 +32,7 @@ public class LoginPage extends Page {
 
     public Page loginFormSubmit() {
         driver.findElement(loginButtonLocator).submit();
-        waitFor(15);
+        waitFor(6);
         MainPage mainPage = new MainPage(driver);
 
         if (mainPage.tryInit()) {

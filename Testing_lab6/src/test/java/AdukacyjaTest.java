@@ -25,9 +25,8 @@ public class AdukacyjaTest {
     private static final String ARG = "--proxy-server=localhost:";
     private static final String DIR = "results\\";
     private static final String FILE_RESULT_LOAD = DIR + "TestLoad.har";
-    private static final String FILE_RESULT_LOGIN_POS = DIR + "TestLoginPos.har";
     private static final String FILE_RESULT_LOGIN_NEG = DIR + "TestLoginNeg.har";
-    private static final String FILE_RESULT_MY_COURSES = DIR + "TestMyCourses.har";
+    private static final String FILE_RESULT_COURSES = DIR + "TestLinkCourses.har";
 
     private ChromeDriver chromeDriver;
     private ProxyServer server;
@@ -65,27 +64,22 @@ public class AdukacyjaTest {
         saveHar(FILE_RESULT_LOAD, server.getHar());
     }
 
-    @Test
-    public void testLoginPositiveAdukacyja() {
-        Page resultPage = loginPositive();
-        assertTrue(resultPage instanceof MainPage);
-        saveHar(FILE_RESULT_LOGIN_POS, server.getHar());
-    }
 
     @Test
     public void testLoginNegativeAdukacyja() throws InterruptedException {
         Page resultPage = loginAction("lalala", "lalala");
         assertTrue(resultPage instanceof LoginFailurePage);
-        saveHar(FILE_RESULT_LOGIN_POS, server.getHar());
+        saveHar(FILE_RESULT_LOGIN_NEG, server.getHar());
     }
 
     @Test
-    public void testMyCoursesAdukacyja() {
-        Page resultPage = loginPositive();
-        assertTrue(resultPage instanceof MainPage);
-        MyCoursesPage myCoursesPage = ((MainPage) resultPage).goToMyCoursesPage();
-        assertEquals(MyCoursesPage.URL, chromeDriver.getCurrentUrl());
-        saveHar(FILE_RESULT_LOGIN_POS, server.getHar());
+    public void testLinkCoursesAdukacyja() {
+        chromeDriver.get(TEST_SITE);
+        server.newHar(HAR_MARK);        // set mark for har file
+        MainPage page = new MainPage(chromeDriver);
+        CoursesPage coursesPage = page.goToCoursesPage();
+        assertEquals(CoursesPage.URL, chromeDriver.getCurrentUrl());
+        saveHar(FILE_RESULT_COURSES, server.getHar());
     }
 
     private Page loginAction(String login, String password) {
@@ -97,10 +91,6 @@ public class AdukacyjaTest {
         return page.loginFormSubmit();
     }
 
-    private Page loginPositive() {
-        return loginAction("enter_correct_login", "enter_correct_password");
-    }
-
     private void saveHar(String fileName, Har har) {
         try {
             File file = new File(fileName);
@@ -108,12 +98,8 @@ public class AdukacyjaTest {
                 file.createNewFile();
             }
 
-            FileOutputStream fos = new FileOutputStream(file);
-
-            try {
+            try (FileOutputStream fos = new FileOutputStream(file)) {
                 har.writeTo(fos);
-            } finally {
-                fos.close();
             }
         } catch (IOException e) {
             e.printStackTrace();
